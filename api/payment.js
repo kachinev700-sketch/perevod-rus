@@ -1,5 +1,5 @@
 // 🔐 БЕЗОПАСНОЕ ИСПОЛЬЗОВАНИЕ ПЕРЕМЕННЫХ ОКРУЖЕНИЯ
-const API_KEY = process.env.QR_API_KEY;
+const API_KEY = process.env.QR_API_KEY_PEREVOD;
 
 // 🔥 ХРАНИЛИЩЕ ДЛЯ СООТВЕТСТВИЯ OPERATION_ID -> CALLBACK_ID
 const paymentMappings = new Map();
@@ -110,7 +110,7 @@ module.exports = async (req, res) => {
 
   // Проверяем что API ключ загружен
   if (!API_KEY) {
-    console.error('QR_API_KEY is not set');
+    console.error('QR_API_KEY_PEREVOD is not set');
     return res.status(500).json({ success: false, error: 'API key not configured' });
   }
 
